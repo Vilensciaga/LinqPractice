@@ -4,20 +4,27 @@ using System.Security.Cryptography.X509Certificates;
 using System.Xml.Schema;
 
 
-var students =  UserService.populateArray();
+var students =  StudentService.populateArray();
 
 
 
 List <string> firstName = new List<string>();
-firstName = UserService.ListAllUserFirstNames(students);
+firstName = StudentService.ListAllUserFirstNames(students);
 
 foreach (var name in firstName)
 {
     Console.WriteLine(name);
 }
 
+
+
+
+Console.WriteLine();
+
+
+
 List<string> fullName = new List<string>();
-fullName = UserService.ListUserFullNames(students);
+fullName = StudentService.ListUserFullNames(students);
 
 foreach(var name in fullName)
 {
@@ -25,8 +32,17 @@ foreach(var name in fullName)
 }
 
 
-Console.WriteLine($"Number Of Students: {UserService.NumberOfStudents(students)}");
-Console.WriteLine($"Number Of Active Students: {UserService.NumberOfActiveStudents(students)}");
+Console.WriteLine();
+
+
+Console.WriteLine($"Number Of Students: {StudentService.NumberOfStudents(students)}");
+Console.WriteLine();
+
+
+Console.WriteLine($"Number Of Active Students: {StudentService.NumberOfActiveStudents(students)}");
+Console.WriteLine();
+
+
 
 foreach (var student in students)
 {
